@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - image: github.com/savitaashture/knative-demo
-        containerPort: 8080
+        ports:
+        - containerPort: 8080
         name: webapp
         env:
           - name: TARGET
@@ -35,6 +36,7 @@ spec:
     - port: 8080
       protocol: TCP
       targetPort: 8080
+      nodePort: 30001
   selector:
     app: webapp
   type: NodePort
