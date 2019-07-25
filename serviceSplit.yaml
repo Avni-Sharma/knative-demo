@@ -1,0 +1,19 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: envapp
+spec:
+  template:
+    spec:
+      containers:
+      - image: github.com/savitaashture/simple-go-app/helloworld
+        env:
+        - name: TARGET
+          value: "v4"
+  traffic:
+  - tag: current
+    revisionName: envapp-vltcr
+    percent: 100
+  - tag: latest
+    latestRevision: true
+    percent: 0

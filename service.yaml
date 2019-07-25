@@ -1,0 +1,13 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: webapp
+spec:
+  template:
+    spec:
+      containers:
+      - image: github.com/savitaashture/knative-demo
+        containerPort: 8080
+        env:
+        - name: TARGET
+          value: "Knative World"

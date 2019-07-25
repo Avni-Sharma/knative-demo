@@ -1,1 +1,1 @@
-# knative-demo
+# simple-go-app
