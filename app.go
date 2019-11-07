@@ -11,9 +11,9 @@ func envHandler(w http.ResponseWriter, r *http.Request) {
 	log.Print("Hello world received a request.")
 	target := os.Getenv("TARGET")
 	if target == "" {
-		target = "Knative World"
+		target = "Serverless"
 	}
-	fmt.Fprintf(w, "Hello %s!\n", target)
+	fmt.Fprintf(w, "OpenShift %s!\n", target)
 }
 
 func main() {
